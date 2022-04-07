@@ -28,8 +28,7 @@ jobs:
       run: mvn -B install --file Extrassentials/pom.xml
     - name: Set Release version env variable
       run: |
-        POM_VERSION=$(mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec -q)
-        echo $POM_VERSION
+        echo "POM_VERSION=$(mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec -q)"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
