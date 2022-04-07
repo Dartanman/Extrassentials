@@ -6,4 +6,4 @@ A couple things to note:
 - **Dev** builds are made automatically by GitHub whenever I make a change to the code. They may not work properly, or at all, but you may use them if you wish.
 - **Release** builds are tested and working as expected. I might not always make new **Release** builds, even if the **Dev** build works (e.g. if it was a small change and I'd rather lump it into a bigger update).
 
-That's it! I'll be sure to add a Wiki page soon.
+The Wiki contains information about the actual functionality of the plugin (specifically the latest **Release** build -- not necessarily the latest **Dev** build).
