@@ -12,3 +12,7 @@ commands:
     description: Send a private message
     usage: /<command>
     aliases: [msg, tell, whisper, t]
+  reply:
+    description: Reply to a private message
+    usage: /<command>
+    aliases: [rep, r]

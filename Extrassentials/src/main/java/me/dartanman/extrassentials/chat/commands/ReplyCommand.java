@@ -15,7 +15,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class MessageCommand implements CommandExecutor
+public class ReplyCommand implements CommandExecutor
 {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
@@ -37,24 +37,23 @@ public class MessageCommand implements CommandExecutor
             return true;
         }
 
-        if(args.length <= 1)
+        if(args.length < 1)
         {
             ePlayer.sendColoredMessage(config.getString("Global-Messages.Incorrect-Args").replace("<suggestion>",
-                    "/" + label + " <player> <message>"));
+                    "/" + label + " <message>"));
             return true;
         }
         else
         {
-            String targetName = args[0];
-            Player target = Bukkit.getPlayer(targetName);
-            if(target == null)
+            EPlayer eTarget = ChatUtils.getReplyTo(ePlayer);
+            if(eTarget == null || Bukkit.getPlayer(eTarget.getUniqueId()) == null)
             {
                 ePlayer.sendColoredMessage(config.getString("Global-Messages.Target-Offline"));
                 return true;
             }
-            EPlayer eTarget = api.getEPlayerManager().getByUUID(target.getUniqueId());
+            Player target = Bukkit.getPlayer(eTarget.getUniqueId());
             String message = "";
-            for (int i = 1; i < args.length; i++)
+            for (int i = 0; i < args.length; i++)
             {
                 message = message.concat(args[i].concat(" "));
             }

@@ -1,6 +1,7 @@
 package me.dartanman.extrassentials.core;
 
 import me.dartanman.extrassentials.chat.commands.MessageCommand;
+import me.dartanman.extrassentials.chat.commands.ReplyCommand;
 import me.dartanman.extrassentials.chat.listeners.ColorChatListener;
 import me.dartanman.extrassentials.core.commands.ExtrassentialsCommand;
 import me.dartanman.extrassentials.core.files.FileManager;
@@ -85,6 +86,7 @@ public class Extrassentials extends JavaPlugin
 
 			// Commands
 			getCommand("message").setExecutor(new MessageCommand());
+			getCommand("reply").setExecutor(new ReplyCommand());
 
 			// Info
 			getLogger().info("Extrassentials-Chat has been enabled. You may disable it in the Extrassentials config.yml");
