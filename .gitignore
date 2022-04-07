@@ -12,3 +12,5 @@ misc.xml
 *.iml
 compiler.xml
 jarRepositories.xml
+*.lst
+*.jar
