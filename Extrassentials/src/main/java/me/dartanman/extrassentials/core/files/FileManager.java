@@ -1,6 +1,6 @@
-package me.dartanman.extrassentials.files;
+package me.dartanman.extrassentials.core.files;
 
-import me.dartanman.extrassentials.Extrassentials;
+import me.dartanman.extrassentials.core.Extrassentials;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
