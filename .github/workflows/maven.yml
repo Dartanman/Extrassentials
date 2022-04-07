@@ -24,19 +24,17 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B install --file Extrassentials/pom.xml
-    - name: Extract Maven project version
-      run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
-      id: project
-    - name: Show extracted Maven project version
-      run: echo ${{ steps.project.outputs.version }}
+    - name: Set Release version env variable
+      run: |
+        echo "RELEASE_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          tag_name: ${{ steps.project.outputs.version }}
-          release_name: ${{ steps.project.outputs.version }}
+          tag_name: ${{ RELEASE_VERSION }}
+          release_name: ${{ RELEASE_VERSION }}
           draft: false
           prerelease: true
     - name: Upload Release Asset
@@ -46,6 +44,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: /home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-${{ steps.project.outputs.version }}.jar
-          asset_name: Extrassentials-SNAPSHOT-${{ steps.project.outputs.version }}.jar
+          asset_path: /home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-${{ RELEASE_VERSION }}.jar
+          asset_name: Extrassentials-SNAPSHOT-${{ RELEASE_VERSION }}.jar
           asset_content_type: application/jar
