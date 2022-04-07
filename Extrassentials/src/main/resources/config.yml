@@ -14,3 +14,4 @@ Global-Messages:
   Must-Be-A-Player: '&cYou must be a player to do that!'
   Incorrect-Args: '&cIncorrect args! Try &e<suggestion>&c!'
   Target-Offline: '&cThat player is not online!'
+  Insufficient-Permissions: '&cYou do not have permission for that!'

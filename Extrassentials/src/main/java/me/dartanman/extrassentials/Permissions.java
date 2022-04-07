@@ -7,4 +7,6 @@ public class Permissions
 
     public static String SILENT_JOIN = "extrassentials.silentjoin";
 
+    public static String PRIVATE_MESSAGE = "extrassentials.message";
+
 }

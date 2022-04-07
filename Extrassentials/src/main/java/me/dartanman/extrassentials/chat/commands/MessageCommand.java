@@ -30,6 +30,11 @@ public class MessageCommand implements CommandExecutor
         UUID uuid = player.getUniqueId();
         ExtrassentialsAPI api = ExtrassentialsAPI.getInstance();
         EPlayer ePlayer = api.getEPlayerManager().getByUUID(uuid);
+        if(!player.hasPermission(Permissions.PRIVATE_MESSAGE))
+        {
+            ePlayer.sendColoredMessage(config.getString("Global-Messages.Insufficient-Permissions"));
+            return true;
+        }
 
         if(args.length <= 1)
         {
