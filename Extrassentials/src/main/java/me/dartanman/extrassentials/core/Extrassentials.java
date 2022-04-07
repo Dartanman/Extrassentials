@@ -1,5 +1,6 @@
 package me.dartanman.extrassentials.core;
 
+import me.dartanman.extrassentials.chat.commands.MessageCommand;
 import me.dartanman.extrassentials.core.commands.ExtrassentialsCommand;
 import me.dartanman.extrassentials.core.files.FileManager;
 import me.dartanman.extrassentials.core.listeners.EPlayerListener;
@@ -19,6 +20,7 @@ public class Extrassentials extends JavaPlugin
 		// Enable the core of Extrassentials
 		enableCore();
 		enableExtrassentialsJoin();
+		enableExtrassentialsChat();
 	}
 
 	/**
@@ -63,6 +65,32 @@ public class Extrassentials extends JavaPlugin
 		{
 			// Info
 			getLogger().info("Extrassentials-Join has not been enabled. If you wish to enable this module, do so in the Extrassentials config.yml");
+		}
+	}
+
+	/**
+	 * Enables the Extrassentials-Chat module
+	 */
+	private void enableExtrassentialsChat()
+	{
+		// Setup
+		boolean enabled = FileManager.getConfig().getBoolean("Extrassentials-Chat.Enabled");
+
+		if(enabled)
+		{
+			// Events
+			// (there are none right now)
+
+			// Commands
+			getCommand("message").setExecutor(new MessageCommand());
+
+			// Info
+			getLogger().info("Extrassentials-Chat has been enabled. You may disable it in the Extrassentials config.yml");
+		}
+		else
+		{
+			// Info
+			getLogger().info("Extrassentials-Chat has not been enabled. If you wish to enable this module, do so in the Extrassentials config.yml");
 		}
 	}
 
