@@ -1,5 +1,6 @@
 package me.dartanman.extrassentials.join.listeners;
 
+import me.dartanman.extrassentials.Permissions;
 import me.dartanman.extrassentials.core.files.FileManager;
 import me.dartanman.extrassentials.core.utils.StringUtils;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -23,8 +24,7 @@ public class JoinListener implements Listener
         boolean silentJoinEnabled = config.getBoolean("Extrassentials-Join.Silent-Join.Enabled");
         if(silentJoinEnabled)
         {
-            String silentPermission = config.getString("Extrassentials-Join.Silent-Join.Permission");
-            assert silentPermission != null;
+            String silentPermission = Permissions.SILENT_JOIN;
             if(player.hasPermission(silentPermission))
             {
                 event.setJoinMessage(null);

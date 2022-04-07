@@ -8,3 +8,7 @@ commands:
     description: Display info about Extrassentials
     usage: /<command>
     aliases: [essentials, extraessentials, extensials, ess]
+  message:
+    description: Send a private message
+    usage: /<command>
+    aliases: [msg, tell, whisper, t]
