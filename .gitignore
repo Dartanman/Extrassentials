@@ -4,3 +4,10 @@
 .classpath
 .project
 */target/classes/
+workspace.xml
+vcs.xml
+modules.xml
+misc.xml
+*.iml
+compiler.xml
+jarRepositories.xml
