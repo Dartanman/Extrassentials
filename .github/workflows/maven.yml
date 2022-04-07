@@ -26,8 +26,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B install --file Extrassentials/pom.xml
-    - name: Install xmllint
-      run: apt install libxml2-utils
     - name: Set Release version env variable
       run: |
         POM_VERSION=$(mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec -q)
