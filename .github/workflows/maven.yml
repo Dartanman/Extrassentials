@@ -33,8 +33,8 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          tag_name: ${{ RELEASE_VERSION }}
-          release_name: ${{ RELEASE_VERSION }}
+          tag_name: ${{ env.RELEASE_VERSION }}
+          release_name: ${{ env.RELEASE_VERSION }}
           draft: false
           prerelease: true
     - name: Upload Release Asset
@@ -44,6 +44,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: /home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-${{ RELEASE_VERSION }}.jar
-          asset_name: Extrassentials-SNAPSHOT-${{ RELEASE_VERSION }}.jar
+          asset_path: /home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-${{ env.RELEASE_VERSION }}.jar
+          asset_name: Extrassentials-SNAPSHOT-${{ env.RELEASE_VERSION }}.jar
           asset_content_type: application/jar
