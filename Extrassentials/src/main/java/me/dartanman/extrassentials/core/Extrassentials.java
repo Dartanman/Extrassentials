@@ -16,13 +16,8 @@ public class Extrassentials extends JavaPlugin
 	{
 		// Enable the core of Extrassentials
 		enableCore();
+		enableExtrassentialsJoin();
 
-		boolean esJoinEnabled = FileManager.getConfig().getBoolean("Extrassentials-Join.Enabled");
-
-		if(esJoinEnabled)
-		{
-			enableExtrassentialsJoin();
-		}
 	}
 
 	/**
@@ -31,6 +26,7 @@ public class Extrassentials extends JavaPlugin
 	private void enableCore()
 	{
 		FileManager.init();
+		getLogger().info("Extrassentials-Core has been enabled. The core cannot be disabled (except by uninstalling Extrassentials)");
 	}
 
 	/**
@@ -38,8 +34,18 @@ public class Extrassentials extends JavaPlugin
 	 */
 	private void enableExtrassentialsJoin()
 	{
-		getServer().getPluginManager().registerEvents(new JoinListener(), this);
-		getServer().getPluginManager().registerEvents(new QuitListener(), this);
+		boolean enabled = FileManager.getConfig().getBoolean("Extrassentials-Join.Enabled");
+
+		if(enabled)
+		{
+			getServer().getPluginManager().registerEvents(new JoinListener(), this);
+			getServer().getPluginManager().registerEvents(new QuitListener(), this);
+			getLogger().info("Extrassentials-Join has been enabled.");
+		}
+		else
+		{
+			getLogger().info("Extrassentials-Join has not been enabled. If you wish to enable this module, do so in the Extrassentials config.yml");
+		}
 	}
 
 }
