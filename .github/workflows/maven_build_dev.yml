@@ -32,4 +32,5 @@ jobs:
         artifacts: "/home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-${{ env.RELEASE_VERSION }}.jar"
         tag: Dev-Build-${{ env.RELEASE_VERSION }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        prerelease: true
+        prerelease: false
+        draft: false
