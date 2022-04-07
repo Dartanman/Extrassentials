@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.dartanman.extrassentials</groupId>
 	<artifactId>LandorymCore</artifactId>
-	<version>22.6.4.1</version>
+	<version>22.6.4.2</version>
 	<name>extrassentials</name>
 	<repositories>
 		<repository>
