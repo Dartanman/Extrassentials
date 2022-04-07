@@ -1,8 +1,6 @@
 package me.dartanman.extrassentials.core.commands;
 
 import me.dartanman.extrassentials.core.ExtrassentialsAPI;
-import me.dartanman.extrassentials.core.files.FileManager;
-import me.dartanman.extrassentials.core.utils.StringUtils;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
