@@ -2,3 +2,4 @@
 Extrassentials-Join:
   Enabled: true
   Custom-Join-Message: '&7[&a+&7] &f<player>'
+  Custom-Quit-Message: '&7[&c-&7] &f<player>'
