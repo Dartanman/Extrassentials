@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.dartanman.extrassentials</groupId>
 	<artifactId>Extrassentials</artifactId>
-	<version>22.6.4.5</version>
+	<version>SNAPSHOT-22.6.4.5</version>
 	<properties>
 		<maven.compiler.source>16</maven.compiler.source>
 		<maven.compiler.target>16</maven.compiler.target>
