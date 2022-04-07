@@ -27,5 +27,5 @@ jobs:
     - name: 'Publish JAR'
       uses: actions/upload-artifact@v2-preview
       with:
-        name: ‘cicd-demo-${{env.VERSION}}-all.jar'
+        name: ‘Extrassentials-${project.version}.jar'
         path: /home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-*.jar
