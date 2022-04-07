@@ -4,6 +4,7 @@
 .classpath
 .project
 */target/classes/
+.idea
 workspace.xml
 vcs.xml
 modules.xml
