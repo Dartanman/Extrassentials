@@ -28,7 +28,7 @@ jobs:
       run: mvn -B install --file Extrassentials/pom.xml
     - name: Set Release version env variable
       run: |
-        echo "RELEASE_VERSION=$(mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec --file Extrassentials/pom.xml -q)" >> GITHUB_ENV
+        echo "RELEASE_VERSION=$(mvn -Dexec.executable='echo' -Dexec.args='${project.version}' --non-recursive exec:exec --file Extrassentials/pom.xml -q)" >> $GITHUB_ENV
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
