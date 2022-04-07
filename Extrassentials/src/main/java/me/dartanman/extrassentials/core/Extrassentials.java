@@ -1,12 +1,14 @@
 package me.dartanman.extrassentials.core;
 
 import me.dartanman.extrassentials.chat.commands.MessageCommand;
+import me.dartanman.extrassentials.chat.listeners.ColorChatListener;
 import me.dartanman.extrassentials.core.commands.ExtrassentialsCommand;
 import me.dartanman.extrassentials.core.files.FileManager;
 import me.dartanman.extrassentials.core.listeners.EPlayerListener;
 import me.dartanman.extrassentials.join.listeners.JoinListener;
 import me.dartanman.extrassentials.join.listeners.QuitListener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.C;
 
 /**
  * Extrassentials Main Class
@@ -79,7 +81,7 @@ public class Extrassentials extends JavaPlugin
 		if(enabled)
 		{
 			// Events
-			// (there are none right now)
+			getServer().getPluginManager().registerEvents(new ColorChatListener(), this);
 
 			// Commands
 			getCommand("message").setExecutor(new MessageCommand());
