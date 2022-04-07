@@ -2,6 +2,7 @@ package me.dartanman.extrassentials.core;
 
 import me.dartanman.extrassentials.core.files.FileManager;
 import me.dartanman.extrassentials.join.listeners.JoinListener;
+import me.dartanman.extrassentials.join.listeners.QuitListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -38,6 +39,7 @@ public class Extrassentials extends JavaPlugin
 	private void enableExtrassentialsJoin()
 	{
 		getServer().getPluginManager().registerEvents(new JoinListener(), this);
+		getServer().getPluginManager().registerEvents(new QuitListener(), this);
 	}
 
 }
