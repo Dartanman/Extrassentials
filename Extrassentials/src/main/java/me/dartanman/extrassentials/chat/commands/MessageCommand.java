@@ -50,7 +50,7 @@ public class MessageCommand implements CommandExecutor
             String message = "";
             for (int i = 1; i < args.length; i++)
             {
-                message = message.concat(args[i]);
+                message = message.concat(args[i].concat(" "));
             }
             String sendMessageFormat = StringUtils.colorize(config.getString("Extrassentials-Chat.Private-Message-Format.Sender"))
                     .replace("<sender>", player.getName())
