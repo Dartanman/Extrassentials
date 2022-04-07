@@ -1,5 +1,6 @@
 package me.dartanman.extrassentials.core;
 
+import me.dartanman.extrassentials.core.commands.ExtrassentialsCommand;
 import me.dartanman.extrassentials.core.files.FileManager;
 import me.dartanman.extrassentials.join.listeners.JoinListener;
 import me.dartanman.extrassentials.join.listeners.QuitListener;
@@ -17,7 +18,6 @@ public class Extrassentials extends JavaPlugin
 		// Enable the core of Extrassentials
 		enableCore();
 		enableExtrassentialsJoin();
-
 	}
 
 	/**
@@ -26,6 +26,7 @@ public class Extrassentials extends JavaPlugin
 	private void enableCore()
 	{
 		FileManager.init();
+		getCommand("extrassentials").setExecutor(new ExtrassentialsCommand());
 		getLogger().info("Extrassentials-Core has been enabled. The core cannot be disabled (except by uninstalling Extrassentials)");
 	}
 

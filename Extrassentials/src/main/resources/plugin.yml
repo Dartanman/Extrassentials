@@ -3,3 +3,8 @@ author: Dartanman
 version: ${project.version}
 api-version: 1.18
 main: me.dartanman.extrassentials.core.Extrassentials
+commands:
+  extrassentials:
+    description: Display info about Extrassentials
+    usage: /<command>
+    aliases: [essentials, extraessentials, extensials, ess]
