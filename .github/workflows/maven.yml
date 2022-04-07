@@ -27,5 +27,5 @@ jobs:
     - name: 'Publish JAR'
       uses: actions/upload-artifact@v2-preview
       with:
-        name: ‘Extrassentials-${project.version}.jar'
+        name: ‘Extrassentials'
         path: /home/runner/work/Extrassentials/Extrassentials/Extrassentials/target/Extrassentials-*.jar
