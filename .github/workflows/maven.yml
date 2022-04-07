@@ -24,12 +24,11 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B install --file Extrassentials/pom.xml
-    - name: Install manual libraries
-      run: |
-        mvn install:install-file -Dfile=lib/xyz.jar -DgroupId=com.xyz-DartifactId=xyz -Dversion=8.3.0 -Dpackaging=jar
+    - name: Install xmllint
+      run: apt install libxml2-utils
     - name: Set Release version env variable
       run: |
-        RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+        RESULT=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' pom.xml)
         echo $RESULT
     - name: Create Release
       id: create_release
