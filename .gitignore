@@ -3,4 +3,4 @@
 *.prefs
 .classpath
 .project
-/target/classes
+target/classes
